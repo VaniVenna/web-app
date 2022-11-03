@@ -16,7 +16,7 @@ export default function Home() {
 
       <Layout>
         <h1 className={styles.title}>
-          Welcome to Next.js!
+          Welcome to Tak Fabrications
         </h1>
         <About />
         <FormExampleFieldControl />
