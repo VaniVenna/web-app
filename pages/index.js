@@ -3,6 +3,7 @@ import Layout from '../components/custom/Layout'
 import styles from '../styles/Home.module.scss'
 import 'semantic-ui-css/semantic.min.css'
 import FormExampleFieldControl from '../components/custom/Form'
+import About from '../components/custom/About'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to Next.js!
         </h1>
+        <About />
         <FormExampleFieldControl />
       </Layout>
     </div>

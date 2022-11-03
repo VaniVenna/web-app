@@ -4,7 +4,7 @@ import Link from "next/link"
 const Links = props => {
   return (props?.links?.map((link, index) => {
     return (
-      <Link href={link?.to}>{link?.item}</Link>
+      <Link key={index} href={link?.to}>{link?.item}</Link>
     )
   }))
 }
