@@ -18,15 +18,9 @@ const Links = (props) => {
 
 const Header = (props) => {
   return (
-    <>
-      {/* <Image src={"/favicon.ico"} alt="logo" width={200} height={200} /> */}
-      <div
-        // class="ui clearing segment"
-        className={styles.headerBox}
-      >
+      <div className={styles.headerBox}>
         <Links links={props?.links} />
       </div>
-    </>
   );
 }; 
 

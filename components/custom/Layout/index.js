@@ -45,7 +45,6 @@ export default function Layout({ children }) {
   return (
     <>
       <Header links={headerLinks} />
-
       <main>{children}</main>
       <Footer />
       <Home />
