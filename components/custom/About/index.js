@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container, Header, List } from 'semantic-ui-react'
+import styles from '../../../styles/About.module.scss'
 
 const About = () => (
-  <Container>
-    <Header as='h2'>CNC Machinist Pty Ltd is a customary machine shop.</Header>
+  <Container className="box">
+    <Header as='h2' className={styles.header6}>CNC Machinist Pty Ltd is a customary machine shop.</Header>
     <p>
       Small but highly practical in our hands-on approach. CNC Machinist is filling the gap between mass production and design. Quantities from 10 – 1000 or just a 1 off component can be produced in our workshop.
     </p>
