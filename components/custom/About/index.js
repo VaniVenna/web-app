@@ -3,7 +3,7 @@ import { Container, Header, List } from 'semantic-ui-react'
 import styles from '../../../styles/About.module.scss'
 
 const About = () => (
-  <div class={`ui stackable two column divided grid container ${styles.aboutContainer}`}>
+  <div class={`ui stackable two column divided grid container ${styles.aboutContainer}`} id="about">
     <div class="eight wide column">
       <div class="ui segment">
         <img />
