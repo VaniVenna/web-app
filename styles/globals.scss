@@ -28,4 +28,72 @@ a {
   h2.ui.header {
     font-size: 20px;
   }
+      // /* The image used */
+      // background-image: url('../assets/image/elias-kauerhof-jPdl1bMgQiw-unsplash.jpg');
+
+      // /* Full height */
+      // height: 100%; 
+    
+      // /* Create the parallax scrolling effect */
+      // background-attachment: fixed;
+      // background-position: center;
+      // background-repeat: no-repeat;
+      // background-size: cover;
+      // width: 100%
+}
+.container.ui.segment {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  position: fixed;
+  z-index: 1;
+  padding: 1em 1em;
+  text-align: center;
+  left: 20%;
+
+
+
+}
+.sticky.ui.segment {
+  position: fixed;
+  top: 0;
+  background-color: whitesmoke;
+  padding: 1em 1em;
+  align-items: center;
+  border: #000000;
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+}
+
+.arrowTop {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  position: fixed;
+  bottom: 0%;
+  background-color: whitesmoke;
+  box-shadow: 0 7px 8px rgb(0 0 0 / 12%);
+  z-index: 1;
+  right: 10%;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+}
+
+.button.ui.floated.header {
+  background-color: #ddd;
+  border: none;
+  color: black !important;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 16px;
+  margin: -6px 6px;
+  transition: 0.3s;
+}
+.button.ui.floated.header:hover {
+  background-color: #3e8e41;
+  color: white;
 }

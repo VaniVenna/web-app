@@ -1,11 +1,14 @@
-import Head from 'next/head'
-import Layout from '../components/custom/Layout'
-import styles from '../styles/Home.module.scss'
-import 'semantic-ui-css/semantic.min.css'
-import FormExampleFieldControl from '../components/custom/Form'
-import About from '../components/custom/About'
+import Head from "next/head";
+import Layout from "../components/custom/Layout";
+import styles from "../styles/Home.module.scss";
+import "semantic-ui-css/semantic.min.css";
+import FormExampleFieldControl from "../components/custom/Form";
+import About from "../components/custom/About";
+import Home from "../components/custom/Home";
+import ServiceContent from "../components/custom/ServiceContent";
+import Gallery from "../components/custom/Gallery";
 
-export default function Home() {
+export default function MainHome() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,12 +18,12 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <h1 className={styles.title}>
-          Welcome to Tak Fabrications
-        </h1>
+        <Home />
         <About />
+        <ServiceContent />
+        <Gallery />
         <FormExampleFieldControl />
       </Layout>
     </div>
-  )
+  );
 }
