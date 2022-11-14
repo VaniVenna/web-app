@@ -1,6 +1,8 @@
+import ServiceContent from "../ServiceContent";
 import Footer from "../../common/Footer";
-import Header from "../../common/Header";
+import HeaderSection from "../../common/Header";
 import Home from "../Home/index";
+import Gallery from "../Gallery";
 
 const headerLinks = [
   {
@@ -10,23 +12,23 @@ const headerLinks = [
   },
   {
     item: "CONTACT",
-    to: "/about",
+    to: "/",
     href: "#home",
   },
   {
     item: "GALLERY",
     to: "/",
-    href: "#home",
+    href: "#gallery",
   },
   {
     item: "SERVICES",
     to: "/",
-    href: "#home",
+    href: "#services",
   },
   {
     item: "ABOUT",
-    to: "/about",
-    href: "#home",
+    to: "/",
+    href: "#about",
   },
   {
     item: "HOME",
@@ -44,10 +46,9 @@ const headerLinks = [
 export default function Layout({ children }) {
   return (
     <>
-      <Header links={headerLinks} />
+      <HeaderSection links={headerLinks}/>
       <main>{children}</main>
       <Footer />
-      <Home />
     </>
   );
 }

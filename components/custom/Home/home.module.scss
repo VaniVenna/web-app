@@ -1,0 +1,32 @@
+// .img {
+//   min-width: 180px;
+//   text-align: center;
+//   cursor: pointer;
+//   img {
+//     width: -webkit-fill-available;
+//     box-shadow: orangered 0 0 5px;
+//   }
+//   p {
+//     color: white;
+//     font-weight: bold;
+//     /* margin: auto; */
+//     font-size: 0.8rem;
+//     margin-top: -1.6rem;
+//     background-color: transparent;
+//     z-index: 100;
+//     /* position: relative; */
+//     text-align: center;
+//     margin-top: -1.6rem;
+//   }
+// }
+
+.customHeaderHome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.customImageHome {
+  max-width: 100%;
+  width: -webkit-fill-available;
+}

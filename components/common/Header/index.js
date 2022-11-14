@@ -1,27 +1,64 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import styles from "./header.module.scss";
+import React from "react";
+import { useEffect, useState } from "react";
+import { Header, Segment } from "semantic-ui-react";
+import Home from "../../custom/Home";
+
 const Links = (props) => {
   return props?.links?.map((link, index) => {
     return link?.id !== "float_left" ? (
-      <h4 class="ui right floated header" key={index}>
+      <Header as="h4" floated="right" key={index} className="button">
         <AnchorLink href={link?.href}>{link?.item}</AnchorLink>
-      </h4>
+      </Header>
     ) : (
-      <h4 class="ui left floated header" key={index}>
+      <Header as="h4" floated="left" key={index} className="button">
         <Link href={link?.href}>{link?.item}</Link>
-      </h4>
+      </Header>
     );
   });
 };
 
-const Header = (props) => {
-  return (
-      <div className={styles.headerBox}>
-        <Links links={props?.links} />
-      </div>
-  );
-}; 
+const HeaderSection = (props) => {
+  useEffect(() => {
+    const header = document.getElementById("myHeader");
+    const topScroll = document.getElementById("topScroll");
+    const sticky = header?.offsetTop;
+    const scrollCallBack = window.addEventListener("scroll", () => {
+      console.log(
+        "window.pageYOffset",
+        window.pageYOffset,
+        typeof window.pageYOffset,
+        sticky,
+        header?.offsetTop
+      );
+      if (window.pageYOffset > sticky) {
+        if (window.pageYOffset > 1500) {
+          header?.classList.add("sticky");
+          topScroll?.classList.add("arrowTop");
+        }
+      }
+      // else {
+      if (window.pageYOffset < 1500) {
+        header?.classList.remove("sticky");
+        topScroll?.classList.remove("arrowTop");
+      }
+      // }
+    });
+    return () => {
+      window.removeEventListener("scroll", scrollCallBack);
+    };
+  }, []);
 
-export default Header;
+  return (
+    <>
+      <Segment id="myHeader" clearing className="container">
+        <Links links={props?.links} />
+      </Segment>
+      <AnchorLink id="topScroll" href="#home"></AnchorLink>
+    </>
+  );
+};
+
+export default HeaderSection;
