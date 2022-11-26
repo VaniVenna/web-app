@@ -5,17 +5,12 @@ import styles from "./home.module.scss"
 
 const Home = (props) => {
   return (
-    <div id="home" className = {styles.customImageHome}>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' alt = "Image not found" 
-        fluid 
-        />
-      <Container textAlign="center">
-        <Header as= "h1" className = {styles.customHeaderHome}>
+    <Container textAlign="center" className={styles.homeContainer} id="home">
+      <Header as="h1" className={styles.customHeaderHome}>
         WE PROVIDE HIGH-QUALITY CNC MACHINED PARTS TO ASSIST YOU IN ACHIEVING
         YOUR GOALS
-        </Header>
-      </Container>
-    </div>
-  );
-};
+      </Header>
+    </Container>
+  )
+}
 export default Home;

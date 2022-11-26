@@ -19,28 +19,19 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
   }
 }
+
 .box {
   h2.ui.header {
     font-size: 20px;
   }
-      // /* The image used */
-      // background-image: url('../assets/image/elias-kauerhof-jPdl1bMgQiw-unsplash.jpg');
-
-      // /* Full height */
-      // height: 100%; 
-    
-      // /* Create the parallax scrolling effect */
-      // background-attachment: fixed;
-      // background-position: center;
-      // background-repeat: no-repeat;
-      // background-size: cover;
-      // width: 100%
 }
+
 .container.ui.segment {
   background: transparent;
   box-shadow: none;
@@ -49,11 +40,10 @@ a {
   z-index: 1;
   padding: 1em 1em;
   text-align: center;
-  left: 20%;
-
-
-
+  // left: 20%;
+  width: 100%;
 }
+
 .sticky.ui.segment {
   position: fixed;
   top: 0;
@@ -93,6 +83,7 @@ a {
   margin: -6px 6px;
   transition: 0.3s;
 }
+
 .button.ui.floated.header:hover {
   background-color: #3e8e41;
   color: white;
