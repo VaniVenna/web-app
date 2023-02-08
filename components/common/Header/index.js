@@ -22,7 +22,7 @@ const Links = (props) => {
         )}
       </Header>
     );
-  });
+  }); 
 };
 
 const HeaderSection = (props) => {
