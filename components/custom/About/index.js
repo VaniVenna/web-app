@@ -7,7 +7,7 @@ import Image from 'next/image'
 const About = () => (
   <Container className={styles.aboutUs} id="about">
     <div className={styles.heroImage}>
-      <Image src={heroImage} width='793' height='600'></Image>
+      <Image src={heroImage} width='793' height='600'  alt='' ></Image>
     </div>
     <div className={styles.description}>
       <Header as='h2' className={styles.header6}>CNC Machinist Pty Ltd is a customary machine shop.</Header>

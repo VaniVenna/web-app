@@ -1,84 +1,111 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from "react";
+import Image from "next/image";
 import {
   Button,
   Checkbox,
+  Container,
   Form,
+  Header,
   Input,
   Radio,
   Select,
   TextArea,
-} from 'semantic-ui-react'
+} from "semantic-ui-react";
+import locationImage from "../../../assets/image/location/location.png";
+import styles from "./Form.module.scss";
+import MainForm from "../MainForm";
 
-const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-  { key: 'o', text: 'Other', value: 'other' },
-]
+const FormExampleFieldControl = () => {
+  const [formData, setFormData] = useState({
+    Fname: "",
+    Lname: "",
+    Email: "",
+    Phone: "",
+    Message: "",
+  });
 
-class FormExampleFieldControl extends Component {
-  state = {}
+  const handleChange = (e, data) => {
+    if (data === "Fname") {
+      setFormData({ ...formData, Fname: e.target.value });
+    }
+    if (data === "Lname") {
+      setFormData({ ...formData, Lname: e.target.value });
+    }
+    if (data === "Email") {
+      setFormData({ ...formData, Email: e.target.value });
+    }
+    if (data === "Phone") {
+      setFormData({ ...formData, Phone: e.target.value });
+    }
+    if (data === "Message") {
+      setFormData({ ...formData, Message: e.target.value });
+    }
+  };
+  const url =
+    "https://www.google.com/maps/place/Tak+Fabrications+and+Precision+Engg/@-38.0368691,145.2040785,20z/data=!4m5!3m4!1s0x6ad613654a2dff81:0x986e3aba0b0f8f20!8m2!3d-38.0367851!4d145.2043024!5m1!1e2";
+  return (
+    <Container className={styles.contactUs} id="contactUs">
+      <div className={styles.form}>
+        <Header as="h2"> Contact Us</Header>
+        <Form>
+          <Form.Group widths="equal">
+            <Form.Field
+              control={Input}
+              label="First name *"
+              placeholder="First name"
+              onChange={(e) => handleChange(e, "Fname")}
+            />
+            <Form.Field
+              control={Input}
+              label="Last name *"
+              placeholder="Last name"
+              onChange={(e) => handleChange(e, "Lname")}
+            />
+          </Form.Group>
+          <Form.Group widths="equal">
+            <Form.Field
+              control={Input}
+              label="Email *"
+              placeholder="Email"
+              onChange={(e) => handleChange(e, "Email")}
+            />
+            <Form.Field
+              type="number"
+              control={Input}
+              label="Phone *"
+              placeholder="Phone"
+              onChange={(e) => handleChange(e, "Phone")}
+            />
+          </Form.Group>
+          <Form.Field
+            control={TextArea}
+            label="Message *"
+            placeholder="Tell us more..."
+            onChange={(e) => handleChange(e, "Message")}
+          />
 
-  handleChange = (e, { value }) => this.setState({ value })
+          <Form.Field
+            id="form-button-control-public"
+            control={Button}
+            content="Send Message"
+            // label="Submit"
+          />
+        </Form>
+      </div>
+      <div className={styles.location}>
+        <a href={url} target="_blank" rel="noreferrer noopener">
+          <Image
+            src={locationImage}
+            alt="N Image"
+            width={500}
+            height={450}
+          ></Image>
+        </a>
+      </div>
 
-  render() {
-    const { value } = this.state
-    return (
-      <Form>
-        <Form.Group widths='equal'>
-          <Form.Field
-            control={Input}
-            label='First name'
-            placeholder='First name'
-          />
-          <Form.Field
-            control={Input}
-            label='Last name'
-            placeholder='Last name'
-          />
-          <Form.Field
-            control={Select}
-            label='Gender'
-            options={options}
-            placeholder='Gender'
-          />
-        </Form.Group>
-        <Form.Group inline>
-          <label>Quantity</label>
-          <Form.Field
-            control={Radio}
-            label='One'
-            value='1'
-            checked={value === '1'}
-            onChange={this.handleChange}
-          />
-          <Form.Field
-            control={Radio}
-            label='Two'
-            value='2'
-            checked={value === '2'}
-            onChange={this.handleChange}
-          />
-          <Form.Field
-            control={Radio}
-            label='Three'
-            value='3'
-            checked={value === '3'}
-            onChange={this.handleChange}
-          />
-        </Form.Group>
-        <Form.Field
-          control={TextArea}
-          label='About'
-          placeholder='Tell us more about you...'
-        />
-        <Form.Field
-          control={Checkbox}
-          label='I agree to the Terms and Conditions'
-        />
-        <Form.Field control={Button}>Submit</Form.Field>
-      </Form>
-    )
-  }
-}
+      {/* <MainForm /> */}
+    </Container>
+  );
+};
 
-export default FormExampleFieldControl
+export default FormExampleFieldControl;

@@ -8,13 +8,18 @@ import Home from "../../custom/Home";
 
 const Links = (props) => {
   return props?.links?.map((link, index) => {
-    return link?.id !== "float_left" ? (
-      <Header as="h4" floated="right" key={index} className="button">
-        <AnchorLink href={link?.href}>{link?.item}</AnchorLink>
-      </Header>
-    ) : (
+    return link?.id === "float_left" ? (
       <Header as="h4" floated="left" key={index} className="button">
         <Link href={link?.href}>{link?.item}</Link>
+      </Header>
+    ) : (
+      <Header as="h4" floated="right" key={index} className="button">
+        {link?.id !== "get_a_quote" && (
+          <AnchorLink href={link?.href}>{link?.item}</AnchorLink>
+        )}
+        {link?.id === "get_a_quote" && (
+          <Link href={link?.href}>{link?.item}</Link>
+        )}
       </Header>
     );
   });
@@ -26,13 +31,13 @@ const HeaderSection = (props) => {
     const topScroll = document.getElementById("topScroll");
     const sticky = header?.offsetTop;
     const scrollCallBack = window.addEventListener("scroll", () => {
-      console.log(
-        "window.pageYOffset",
-        window.pageYOffset,
-        typeof window.pageYOffset,
-        sticky,
-        header?.offsetTop
-      );
+      // console.log(
+      //   "window.pageYOffset",
+      //   window.pageYOffset,
+      //   typeof window.pageYOffset,
+      //   sticky,
+      //   header?.offsetTop
+      // );
       if (window.pageYOffset > sticky) {
         if (window.pageYOffset > 1500) {
           header?.classList.add("sticky");
