@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Header } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 import styles from "./home.module.scss"
+import headerBg from "../../../assets/image/header_bg.webp"
 
 const Home = (props) => {
   return (

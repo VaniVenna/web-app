@@ -1,5 +1,5 @@
 .homeContainer {
-  background-image: url('../../../assets/image/home/background.png');
+  background-image: url("../../../assets/image/home/background.png");
   background-size: cover;
   height: 83.33333333333333vw;
   width: 100% !important;
@@ -13,3 +13,6 @@
     transform: translate(-50%, -50%);
   }
 }
+// h1.ui.header.home_customHeaderHome__8qxrt {
+//   color: #ffff !important
+// }

@@ -8,32 +8,38 @@ const headerLinks = [
   {
     item: "GET A QUOTE",
     to: "/",
-    href: "#home",
+    href: "/Quote",
+    id: "get_a_quote",
   },
   {
     item: "CONTACT",
     to: "/",
     href: "#home",
+    id: "float_right"
   },
   {
     item: "GALLERY",
     to: "/",
     href: "#gallery",
+    id: "float_right"
   },
   {
     item: "SERVICES",
     to: "/",
     href: "#services",
+    id: "float_right"
   },
   {
     item: "ABOUT",
     to: "/",
     href: "#about",
+    id: "float_right"
   },
   {
     item: "HOME",
     to: "/",
     href: "#home",
+    id: "float_right"
   },
   {
     item: "TAK FABRICATION",

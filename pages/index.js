@@ -21,7 +21,7 @@ export default function MainHome() {
         <Home />
         <About />
         <Approach />
-        <ServiceContent />
+        {/* <ServiceContent /> */}
         <Gallery />
         <FormExampleFieldControl />
       </Layout>
