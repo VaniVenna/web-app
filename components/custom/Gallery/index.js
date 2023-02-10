@@ -12,7 +12,7 @@ const Gallery = () => {
   const [items, setItems] = useState([
     {
       id: "1",
-      size: "1400-933",
+      size: "300-188",
       src: "https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
       thumb:
         "https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80",
@@ -165,7 +165,8 @@ const Gallery = () => {
           key={item.id}
           data-lg-size={item.size}
           className="gallery-item"
-          data-src={item.src}
+          // data-src={item.src}
+          data-src="/assembly_1.png"
         >
           {/* <img
             style={{ maxWidth: "280px" }}
@@ -173,12 +174,15 @@ const Gallery = () => {
             src={sampleImage}
           /> */}
           <Image
-            style={{ maxWidth: "280px" }}
+            // style={{ maxWidth: "280px" }}
+            style={{ justifyContent: "space-between" }}
             className="img-responsive"
-            src={item?.thumb}
+            // src={item?.thumb}
+            src="/assembly_1.png"
             alt="No Image"
-            width={376}
-            height={190}
+            width={300}
+            height={200}
+            // justifyContent="space-between"
           ></Image>
         </a>
       );
