@@ -6,7 +6,6 @@ const contactUs = async (req, res) => {
         try {
             connectionString()
             let result = await contacUsSchema.find({});
-            console.log("result", result);
             res.send(result);
         } catch (error) {
             res.send({ 'message': 'Internal Server Error' })
@@ -17,7 +16,7 @@ const contactUs = async (req, res) => {
             res.send(saveInfo);
         } catch (error) {
             console.log('--saveContactInfo--', error);
-            return error;
+            return res.send({ 'message': 'Internal Server Error' });
         }
     }
 

@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 const contactUsSchema = new mongoose.Schema({
-    'name': 'string',
-    'email': 'string',
-    'phone': 'string',
-    'message': 'string'
+    'name': String,
+    'email': String,
+    'phone': String,
+    'message': String
 }, { timestamps: true });
 
-const contactUs = mongoose.model('contactus', contactUsSchema);
+const contactUs = mongoose.models.contactus || mongoose.model('contactus', contactUsSchema);
 
 export default contactUs;
