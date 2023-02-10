@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 const mongoConnection = async () => {
     try {
-        await mongoose.connect("mongodb+srv://xx:xx@nodejs.rcw0hi6.mongodb.net/manufacture");
-        console.log('Mongo Connected Successfull...!');
+        return await mongoose.connect("mongodb://localhost:27017/manufacture");
     } catch (error) {
         console.log('Mongo Error', error);
         return error;
