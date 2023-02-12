@@ -1,38 +1,35 @@
-import { Container, Header, List } from "semantic-ui-react"
-import styles from './approach.module.scss'
+import { Container, Header, List } from "semantic-ui-react";
+import styles from "./approach.module.scss";
 
-const Approach = props => {
+const Approach = (props) => {
   return (
     <Container id="services" className={styles.approach}>
       <div className={styles.info}>
-        <Header as="h2" className={styles.header}>Our approach is very simple.</Header>
+        <Header as="h2" className={styles.header}>
+          FUTURE VISION:
+        </Header>
+        <p>
+          Our future vision to expand our business through including the
+          following machineries.
+        </p>
         <List bulleted>
-          <List.Item>
-            Straight talk about what we can do and when we can do it.
-          </List.Item>
-          <List.Item>
-            Focusing on coordinating a clients priorities and fulfilling their
-            needs.
-          </List.Item>
-          <List.Item>
-            Our customers requirements drive every aspect of our business
-          </List.Item>
+          <List.Item>Turret Punching</List.Item>
+          <List.Item>Laser Cutting</List.Item>
+          <List.Item>Robotic Welding</List.Item>
+          <List.Item>Powder Coating Line</List.Item>
         </List>
       </div>
       <div className={styles.values}>
         <Header as="h2" className={styles.header}>
-          When you work with CNC Machinist as your preferred component supplier,
-          you will get the following production and efficiency benefits:
+          In addition to our manufacturing capabilities, TAK also offers:
         </Header>
         <List bulleted>
-          <List.Item>Competitive pricing</List.Item>
-          <List.Item>Precision components</List.Item>
-          <List.Item>Fine tolerances and accuracy</List.Item>
-          <List.Item>Quality workmanship with Repeatability</List.Item>
+          <List.Item>Assembly Support</List.Item>
+          <List.Item>Logistics Support</List.Item>
         </List>
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default Approach
+export default Approach;
