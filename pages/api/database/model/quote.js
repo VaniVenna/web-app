@@ -11,3 +11,7 @@ const quoteSchema = mongoose.Schema({
     'zip_code': Number,
     'country': String
 });
+
+const quotes =
+  mongoose.models.quoteSchema || mongoose.model("quotes", quoteSchema);
+export default quotes;

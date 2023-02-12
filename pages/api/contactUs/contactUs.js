@@ -1,5 +1,5 @@
-import connectionString from '../../database/connection';
-import contacUsSchema from '../../database/model/contactUs';
+import connectionString from '../database/connection';
+import contacUsSchema from '../database/model/contactUs';
 
 const contactUs = async (req, res) => {
     if (req.method === 'GET') {
