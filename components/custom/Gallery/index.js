@@ -202,16 +202,14 @@ const Gallery = () => {
         <Image src={sampleImage} alt="N Image"></Image>
         <Image src={sampleImage} alt="N Image"></Image>
       </div> */}
-      <div>
-        {/* <button onClick={addItem}>Add new item</button> */}
-        <LightGallery
-          plugins={[lgVideo, lgZoom]}
-          elementClassNames="custom-class-name"
-          onInit={onInit}
-        >
-          {getItems()}
-        </LightGallery>
-      </div>
+      {/* <button onClick={addItem}>Add new item</button> */}
+      <LightGallery
+        plugins={[lgVideo, lgZoom]}
+        elementClassNames="custom-class-name"
+        onInit={onInit}
+      >
+        {getItems()}
+      </LightGallery>
     </div>
   );
 };

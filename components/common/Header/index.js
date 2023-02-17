@@ -4,13 +4,18 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Header, Segment } from "semantic-ui-react";
+import logoImage from "../../../public/logo01.png";
 import Home from "../../custom/Home";
 
 const Links = (props) => {
   return props?.links?.map((link, index) => {
     return link?.id === "float_left" ? (
       <Header as="h4" floated="left" key={index} className="button">
-        <Link href={link?.href}>{link?.item}</Link>
+        {/* <Image src={logoImage} alt="N Image" width={300} height={50}></Image> */}
+        <Link href={link?.href}>
+        <Image src={logoImage} alt="N Image" width={150} height={50}></Image>
+        {/* {link?.item} */}
+        </Link>
       </Header>
     ) : (
       <Header as="h4" floated="right" key={index} className="button">
@@ -22,7 +27,7 @@ const Links = (props) => {
         )}
       </Header>
     );
-  }); 
+  });
 };
 
 const HeaderSection = (props) => {
