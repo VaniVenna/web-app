@@ -5,17 +5,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Header, Segment } from "semantic-ui-react";
 import logoImage from "../../../public/header1-removebg-preview.png";
-import Home from "../../custom/Home";
+import styles from "./header.module.scss";
+
 
 const Links = (props) => {
   return props?.links?.map((link, index) => {
-    return link?.id === "float_left" ? (
-      <Header as="h4" floated="left" key={index} className="button">
-        <Link href={link?.href}>
-          <Image src={logoImage} alt="N Image" width={150} height={91}></Image>
-        </Link>
-      </Header>
-    ) : (
+    return (
       <Header as="h4" floated="right" key={index} className="button">
         {link?.id !== "get_a_quote" && (
           <AnchorLink href={link?.href}>{link?.item}</AnchorLink>
@@ -34,21 +29,14 @@ const HeaderSection = (props) => {
     const topScroll = document.getElementById("topScroll");
     const sticky = header?.offsetTop;
     const scrollCallBack = window.addEventListener("scroll", () => {
-      // console.log(
-      //   "window.pageYOffset",
-      //   window.pageYOffset,
-      //   typeof window.pageYOffset,
-      //   sticky,
-      //   header?.offsetTop
-      // );
       if (window.pageYOffset > sticky) {
-        if (window.pageYOffset > 1500) {
+        if (window.pageYOffset > 200) {
           header?.classList.add("sticky");
           topScroll?.classList.add("arrowTop");
         }
       }
       // else {
-      if (window.pageYOffset < 1500) {
+      if (window.pageYOffset < 200) {
         header?.classList.remove("sticky");
         topScroll?.classList.remove("arrowTop");
       }
@@ -62,9 +50,18 @@ const HeaderSection = (props) => {
   return (
     <>
       <Segment id="myHeader" clearing className="container">
-        <Links links={props?.links} />
+        <div className="header-logo">
+          <Link href='/'>
+            <Image src={logoImage} alt="N Image" width={150} height={91}></Image>
+          </Link>
+        </div>
+        <div className="header-links">
+          <Links links={props?.links} />
+        </div>
       </Segment>
-      <AnchorLink id="topScroll" href="#home"></AnchorLink>
+      <div className="backToTop">
+        <AnchorLink id="topScroll" href="#home"></AnchorLink>
+      </div>
     </>
   );
 };

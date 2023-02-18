@@ -19,7 +19,6 @@ export default function MainHome() {
       </Head>
 
       <ParallaxProvider>
-        {" "}
         <Layout>
           <Home />
           <About />
