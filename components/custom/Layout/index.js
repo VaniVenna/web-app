@@ -6,27 +6,9 @@ import Gallery from "../Gallery";
 
 const headerLinks = [
   {
-    item: "GET A QUOTE",
-    to: "/",
-    href: "/Quote",
-    id: "get_a_quote",
-  },
-  {
-    item: "CONTACT",
+    item: "HOME",
     to: "/",
     href: "#home",
-    id: "float_right"
-  },
-  {
-    item: "GALLERY",
-    to: "/",
-    href: "#gallery",
-    id: "float_right"
-  },
-  {
-    item: "SERVICES",
-    to: "/",
-    href: "#services",
     id: "float_right"
   },
   {
@@ -36,23 +18,36 @@ const headerLinks = [
     id: "float_right"
   },
   {
-    item: "HOME",
+    item: "SERVICES",
+    to: "/",
+    href: "#services",
+    id: "float_right"
+  },
+  {
+    item: "GALLERY",
+    to: "/",
+    href: "#gallery",
+    id: "float_right"
+  },
+  {
+    item: "CONTACT",
     to: "/",
     href: "#home",
     id: "float_right"
   },
   {
-    item: "TAK FABRICATION",
+    item: "GET A QUOTE",
     to: "/",
-    href: "/",
-    id: "float_left",
+    href: "/Quote",
+    id: "get_a_quote",
   },
+
 ];
 
 export default function Layout({ children }) {
   return (
     <>
-      <HeaderSection links={headerLinks}/>
+      <HeaderSection links={headerLinks} />
       <main>{children}</main>
       <Footer />
     </>

@@ -2,6 +2,7 @@ import { Parallax, Background } from "react-parallax";
 import heroImage from "../../../assets/image/approach/background.png";
 import styles from "./parallaxImage.module.scss";
 import { Container, Header, List } from "semantic-ui-react";
+
 const ParallaxImage = () => (
   <Parallax
     blur={{ min: -15, max: 15 }}
@@ -16,37 +17,27 @@ const ParallaxImage = () => (
           <Header as="h2" className={styles.header}>
             FUTURE VISION:
           </Header>
-          <p>
+          <p className={styles.para}>
             Our future vision to expand our business through including the
             following machineries.
           </p>
-          <List bulleted>
+          <List bulleted className={styles.para}>
             <List.Item>Turret Punching</List.Item>
             <List.Item>Laser Cutting</List.Item>
             <List.Item>Robotic Welding</List.Item>
             <List.Item>Powder Coating Line</List.Item>
           </List>
         </div>
-        <div className={styles.values}>
+        <div className={styles.imgText}>
           <Header as="h2" className={styles.header}>
             In addition to our manufacturing capabilities, TAK also offers:
           </Header>
-          <List bulleted>
+          <List bulleted className={styles.para}>
             <List.Item>Assembly Support</List.Item>
             <List.Item>Logistics Support</List.Item>
           </List>
         </div>
       </Container>
-
-      <div className={styles.imgText}>
-        <Header as="h2" className={styles.header}>
-          In addition to our manufacturing capabilities, TAK also offers:
-        </Header>
-        <List bulleted>
-          <List.Item>Assembly Support</List.Item>
-          <List.Item>Logistics Support</List.Item>
-        </List>
-      </div>
     </div>
 
     <div style={{ height: "200px" }} />
