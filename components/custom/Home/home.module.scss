@@ -1,7 +1,7 @@
 .homeContainer {
-  background-image: url("../../../assets/image/home/background.png");
+  background-image: url("../../../assets/image/home/homepage3.jpg");
   background-size: cover;
-  height: 83.33333333333333vw;
+  height: 50vmax;
   width: 100% !important;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +11,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #ff8100 !important;
+    min-width: 71%;
+    font-size: 2.5rem !important;
+    // background: -webkit-linear-gradient(#fa9c40, #fde585);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
   }
 }
 // h1.ui.header.home_customHeaderHome__8qxrt {
