@@ -7,7 +7,8 @@ import Home from "../components/custom/Home";
 import ServiceContent from "../components/custom/ServiceContent";
 import Gallery from "../components/custom/Gallery";
 import Approach from "../components/custom/Approach";
-
+import { ParallaxProvider } from "react-scroll-parallax";
+import ParallaxImage from "../components/common/ParallaxImage";
 export default function MainHome() {
   return (
     <div>
@@ -17,14 +18,18 @@ export default function MainHome() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
-        <Home />
-        <About />
-        <Approach />
-        {/* <ServiceContent /> */}
-        <Gallery />
-        <FormExampleFieldControl />
-      </Layout>
+      <ParallaxProvider>
+        {" "}
+        <Layout>
+          <Home />
+          <About />
+          <Approach />
+          {/* <ServiceContent /> */}
+          <ParallaxImage/>
+          <Gallery />
+          <FormExampleFieldControl />
+        </Layout>
+      </ParallaxProvider>
     </div>
-  )
+  );
 }

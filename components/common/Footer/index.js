@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer>Copyright 2022 © CNC Machinist</footer>
+    <footer>Copyright 2023 © TAK FABRICATIONS</footer>
   )
 }
 

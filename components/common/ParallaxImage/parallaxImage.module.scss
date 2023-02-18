@@ -1,3 +1,24 @@
+.parallaxImage {
+  position: relative;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  div.imgText {
+    background-color: #333;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.5 rem;
+    letter-spacing: 10px;
+  }
+}
 .aboutUs {
   display: flex !important;
   align-items: center;
@@ -11,7 +32,7 @@
 
     .header6 {
       font-size: 45px;
-      background: -webkit-linear-gradient(#fa9c40,#f14b3a);
+      background: -webkit-linear-gradient(#fa9c40, #f14b3a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }

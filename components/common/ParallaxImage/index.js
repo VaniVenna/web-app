@@ -1,11 +1,17 @@
-import { Container, Header, List } from "semantic-ui-react";
-import styles from "./approach.module.scss";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { Parallax, Background } from "react-parallax";
 import heroImage from "../../../assets/image/approach/background.png";
-const Approach = (props) => {
-  return (
-    <>
-      {/* <Container id="services" className={styles.approach}>
+import styles from "./parallaxImage.module.scss";
+import { Container, Header, List } from "semantic-ui-react";
+const ParallaxImage = () => (
+  <Parallax
+    blur={{ min: -15, max: 15 }}
+    bgImage="/parallax.png"
+    bgImageAlt="the dog"
+    strength={800}
+    className={styles.parallaxImage}
+  >
+    <div className={styles.content}>
+      <Container id="services" className={styles.approach}>
         <div className={styles.info}>
           <Header as="h2" className={styles.header}>
             FUTURE VISION:
@@ -30,24 +36,20 @@ const Approach = (props) => {
             <List.Item>Logistics Support</List.Item>
           </List>
         </div>
-      </Container> */}
-      <ParallaxBanner
-        layers={[
-          { image: {heroImage}, speed: -20 },
-          {
-            speed: -15,
-            children: (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-8xl text-white font-thin">Hello World!</h1>
-              </div>
-            ),
-          },
-          { image: {heroImage}, speed: -10 },
-        ]}
-        className="aspect-[2/1]"
-      />
-    </>
-  );
-};
+      </Container>
 
-export default Approach;
+      <div className={styles.imgText}>
+        <Header as="h2" className={styles.header}>
+          In addition to our manufacturing capabilities, TAK also offers:
+        </Header>
+        <List bulleted>
+          <List.Item>Assembly Support</List.Item>
+          <List.Item>Logistics Support</List.Item>
+        </List>
+      </div>
+    </div>
+
+    <div style={{ height: "200px" }} />
+  </Parallax>
+);
+export default ParallaxImage;

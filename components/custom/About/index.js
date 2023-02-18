@@ -1,17 +1,17 @@
 import React from "react";
 import { Container, Header, List } from "semantic-ui-react";
 import styles from "./About.module.scss";
-import heroImage from "../../../assets/image/about/hero_image.png";
+import heroImage from "../../../assets/image/about/about_image.jpg";
 import Image from "next/image";
 
 const About = () => (
   <Container className={styles.aboutUs} id="about">
     <div className={styles.heroImage}>
-      <Image src={heroImage} width="793" height="600" alt=""></Image>
+      <Image src={heroImage} width="500" height="750" alt=""></Image>
     </div>
     <div className={styles.description}>
       <Header as="h2" className={styles.header6}>
-        TAK FABRICATIONS AND PRECISION ENGINEERING PYT LTD is a welding shop.
+        TAK FABRICATIONS AND PRECISION ENGINEERING PYT LTD
       </Header>
       <div className={styles.bulletList}>
         <p>
