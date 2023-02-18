@@ -65,7 +65,7 @@ a {
 .sticky.ui.segment {
   position: fixed;
   top: 0;
-  background-color: whitesmoke;
+  background-color: #07120e;
   padding: 1em 1em;
   align-items: center;
   border: #000000;
@@ -95,6 +95,7 @@ a {
     color: orange;
     font-size: 18px;
     transition: transform 0.2s;
+    text-shadow: 2px 2px #000;
   }
 
   fill: none;
