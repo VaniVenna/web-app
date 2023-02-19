@@ -9,6 +9,7 @@ import Gallery from "../components/custom/Gallery";
 import Approach from "../components/custom/Approach";
 import { ParallaxProvider } from "react-scroll-parallax";
 import ParallaxImage from "../components/common/ParallaxImage";
+import ParallaxGallery from "../components/custom/parallaxGallery";
 export default function MainHome() {
   return (
     <div>
@@ -24,8 +25,9 @@ export default function MainHome() {
           <About />
           <Approach />
           {/* <ServiceContent /> */}
-          <ParallaxImage/>
+          <ParallaxImage />
           <Gallery />
+          {/* <ParallaxGallery /> */}
           <FormExampleFieldControl />
         </Layout>
       </ParallaxProvider>
