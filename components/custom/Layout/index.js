@@ -32,7 +32,7 @@ const headerLinks = [
   {
     item: "CONTACT",
     to: "/",
-    href: "#home",
+    href: "#contactUs",
     id: "float_right"
   },
   {

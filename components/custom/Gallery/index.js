@@ -35,8 +35,8 @@ const Gallery = () => {
     {
       id: "1",
       size: "1400-932",
-      src: "../../../public/Gallery/galleryImage1.png",
-      thumb: "../../../public/Gallery/galleryImage1.png",
+      src: { galleryImage1 },
+      thumb: { galleryImage1 },
       subHtml: `<div class="lightGallery-captions">
                 <h4>Photo by <a href="https://unsplash.com/@dann">Dan</a></h4>
                 <p>Published on November 13, 2018</p>
