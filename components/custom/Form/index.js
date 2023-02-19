@@ -12,10 +12,10 @@ import {
   TextArea,
 } from "semantic-ui-react";
 import locationImage from "../../../assets/image/location/location.png";
-import weldImage from "../../../assets/image/gallery/weld1.jpg";
+import weldImage from "../../../public/homepage1.jpg";
 import styles from "./Form.module.scss";
-import MainForm from "../MainForm";
 import axios from "axios";
+import { Parallax, Background } from "react-parallax";
 
 const FormExampleFieldControl = () => {
   const [formData, setFormData] = useState({
@@ -83,7 +83,13 @@ const FormExampleFieldControl = () => {
   return (
     <Container className={styles.contactUs} id="contactUs">
       <div className={styles.location}>
-        <Image src={weldImage} alt="N Image" width={500} height={450}></Image>
+        <Image
+          className={styles.contactImage}
+          src={weldImage}
+          alt="N Image"
+          width={600}
+          height={400}
+        ></Image>
       </div>
       <div className={styles.form}>
         <Header as="h2" className={styles.header}>
@@ -159,6 +165,7 @@ const FormExampleFieldControl = () => {
         </Header>
         <a href={url} target="_blank" rel="noreferrer noopener">
           <Image
+            className={styles.contactImage}
             src={locationImage}
             alt="N Image"
             width={500}
