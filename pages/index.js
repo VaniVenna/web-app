@@ -19,7 +19,7 @@ export default function MainHome() {
       </Head>
 
       <ParallaxProvider>
-        <Layout>
+        {/* <Layout> */}
           <Home />
           <About />
           <Approach />
@@ -28,7 +28,7 @@ export default function MainHome() {
           <Gallery />
           {/* <ParallaxGallery /> */}
           <FormExampleFieldControl />
-        </Layout>
+        {/* </Layout> */}
       </ParallaxProvider>
     </div>
   );
