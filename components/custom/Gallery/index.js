@@ -28,6 +28,7 @@ import galleryImage17 from "../../../public/Gallery/galleryImage17.png";
 import galleryImage18 from "../../../public/Gallery/galleryImage18.png";
 import galleryImage19 from "../../../public/Gallery/galleryImage19.png";
 import galleryImage20 from "../../../public/Gallery/galleryImage20.png";
+import galleryImage21 from "../../../public/Gallery/galleryImage21.png";
 
 const Gallery = () => {
   const lightGallery = useRef;
@@ -234,6 +235,16 @@ const Gallery = () => {
                 <p>Published on May 8, 2020</p>
             </div>`,
     },
+    {
+      id: "21",
+      size: "1400-932",
+      src: { galleryImage21 },
+      thumb: { galleryImage21 },
+      subHtml: `<div class="lightGallery-captions">
+                <h4>Photo by <a href="https://unsplash.com/@jxnsartstudio">Garrett Jackson</a></h4>
+                <p>Published on May 8, 2020</p>
+            </div>`,
+    },
   ]);
 
   // const addItem = useCallback(() => {
@@ -305,24 +316,17 @@ const Gallery = () => {
   return (
     <div id="gallery" className={styles.gallery}>
       <div>
-        <h1 className={styles.header}> Gallery </h1>
+        <h1 className={styles.header}>Gallery</h1>
       </div>
-
-      {/* <div className="ui small images">
-        <Image src={sampleImage} alt="N Image"></Image>
-        <Image src={sampleImage} alt="N Image"></Image>
-        <Image src={sampleImage} alt="N Image"></Image>
-        <Image src={sampleImage} alt="N Image"></Image>
-        <Image src={sampleImage} alt="N Image"></Image>
-      </div> */}
-      {/* <button onClick={addItem}>Add new item</button> */}
-      <LightGallery
-        plugins={[lgVideo, lgZoom]}
-        elementClassNames={styles.container}
-        onInit={onInit}
-      >
-        {getItems()}
-      </LightGallery>
+      <div>
+        <LightGallery
+          plugins={[lgVideo, lgZoom]}
+          elementClassNames={styles.container}
+          onInit={onInit}
+        >
+          {getItems()}
+        </LightGallery>
+      </div>
     </div>
   );
 };

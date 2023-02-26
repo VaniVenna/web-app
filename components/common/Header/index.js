@@ -6,24 +6,44 @@ import { useEffect, useState } from "react";
 import { Header, Segment } from "semantic-ui-react";
 import logoImage from "../../../public/header1-removebg-preview.png";
 import styles from "./header.module.scss";
-
-
-const Links = (props) => {
-  return props?.links?.map((link, index) => {
-    return (
-      <Header as="h4" floated="right" key={index} className="button">
-        {link?.id !== "get_a_quote" && (
-          <AnchorLink href={link?.href}>{link?.item}</AnchorLink>
-        )}
-        {link?.id === "get_a_quote" && (
-          <Link href={link?.href}>{link?.item}</Link>
-        )}
-      </Header>
-    );
-  });
-};
+import { useRouter } from "next/router";
+import { HashLink, NavHashLink } from "react-router-hash-link";
+import { Redirect } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const HeaderSection = (props) => {
+  const [data, setData] = useState("");
+  const Links = (props) => {
+    useEffect(() => {
+      setData(window.location.href);
+    }, []);
+    console.log("data", data);
+    return props?.links?.map((link, index) => {
+      return (
+        data && (
+          <Header as="h4" floated="right" key={index} className="button">
+            {link?.id !== "get_a_quote" &&
+              (!data.includes("Quote") ? (
+                <Router>
+                  <HashLink smooth to={link?.href}>
+                    {link?.item}
+                  </HashLink>
+                </Router>
+              ) : (
+                <Link href={`${window.location.origin}${link?.mHref}`}>
+                  {link?.item}
+                </Link>
+              ))}
+            {!data.includes("Quote")
+              ? link?.id === "get_a_quote" && (
+                  <Link href={link?.href}>{link?.item}</Link>
+                )
+              : null}
+          </Header>
+        )
+      );
+    });
+  };
   useEffect(() => {
     const header = document.getElementById("myHeader");
     const topScroll = document.getElementById("topScroll");
@@ -51,8 +71,13 @@ const HeaderSection = (props) => {
     <>
       <Segment id="myHeader" clearing className="container">
         <div className="header-logo">
-          <Link href='/'>
-            <Image src={logoImage} alt="N Image" width={150} height={91}></Image>
+          <Link href="/">
+            <Image
+              src={logoImage}
+              alt="N Image"
+              width={150}
+              height={91}
+            ></Image>
           </Link>
         </div>
         <div className="header-links">

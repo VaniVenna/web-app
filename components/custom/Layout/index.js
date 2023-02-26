@@ -3,37 +3,41 @@ import Footer from "../../common/Footer";
 import HeaderSection from "../../common/Header";
 import Home from "../Home/index";
 import Gallery from "../Gallery";
-
 const headerLinks = [
   {
     item: "HOME",
     to: "/",
     href: "#home",
-    id: "float_right"
+    mHref:"/#home",
+    id: "float_right",
   },
   {
     item: "ABOUT",
     to: "/",
     href: "#about",
-    id: "float_right"
+    mHref:"/#about",
+    id: "float_right",
   },
   {
     item: "SERVICES",
     to: "/",
     href: "#services",
-    id: "float_right"
+    mHref:"/#services",
+    id: "float_right",
   },
   {
     item: "GALLERY",
     to: "/",
     href: "#gallery",
-    id: "float_right"
+    mHref:"/#gallery",
+    id: "float_right",
   },
   {
     item: "CONTACT",
     to: "/",
     href: "#contactUs",
-    id: "float_right"
+    mHref:"/#contactUs",
+    id: "float_right",
   },
   {
     item: "GET A QUOTE",
@@ -41,7 +45,6 @@ const headerLinks = [
     href: "/Quote",
     id: "get_a_quote",
   },
-
 ];
 
 export default function Layout({ children }) {
