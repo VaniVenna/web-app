@@ -1,0 +1,58 @@
+.form {
+  display: flex !important;
+  align-items: center;
+  padding: 5vw 0;
+  background-color: #07120e;
+  width: 100% !important;
+  justify-content: space-evenly;
+  position: relative;
+  .header {
+    background: transparent !important;
+    height: 45px !important;
+    border-radius: 50px !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 30px !important;
+    color: #feb40b !important;
+  }
+  .form_Data {
+    font-size: 18px !important;
+    width: 700px;
+  }
+  .form_Data_Group1 {
+    .form_Data_Group_Field {
+      label {
+        color: white !important;
+      }
+    }
+  }
+  .form_Data_Group2 {
+    .form_Data_Group_Field {
+      label {
+        color: white !important;
+      }
+    }
+  }
+  label {
+    color: white !important;
+  }
+  button {
+    width: 100%;
+    color: black !important;
+    height: 45px !important;
+    font-size: 30px !important;
+    background: #feb40b !important;
+    display: flex !important;
+    justify-content: center !important;
+    min-width: 500px !important;
+    padding: 0 !important;
+    align-items: center;
+  }
+  textarea {
+    height: 120px !important;
+  }
+  .form_Data_Group6 {
+    padding-right: 0.5em;
+  }
+}
