@@ -29,7 +29,7 @@ const About = () => (
           equipment and strategies:
         </p>
         <List bulleted>
-          <List.Item>BREAK PRESS (3.2M 135T)</List.Item>
+          <List.Item>BRAKE PRESS (3.2M 135T)</List.Item>
           <List.Item>
             MIG/GMAW (Metal Inert Gas/Gas Metal Arc Welding)
           </List.Item>

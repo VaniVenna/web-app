@@ -20,6 +20,16 @@
     // -webkit-background-clip: text;
     // -webkit-text-fill-color: transparent;
   }
+  .customHeaderHomeTest {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white !important;
+    min-width: 71%;
+    font-size: 4vw !important;
+    text-shadow: 2px 2px #000;
+  }
 }
 // h1.ui.header.home_customHeaderHome__8qxrt {
 //   color: #ffff !important;
