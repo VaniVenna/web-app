@@ -109,7 +109,7 @@ const Quote = () => {
             required
             type="text"
           />
-          <DropdownUI defaultValue="au" className = {styles.form_Data_Group6_Dropdown}/>
+          <DropdownUI defaultValue="au" className="Quote_Dropdown"/>
         </Form.Group>
 
         <Header as="h4" className={styles.header}>
