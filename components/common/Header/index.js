@@ -71,16 +71,18 @@ const HeaderSection = (props) => {
     <>
       <Segment id="myHeader" clearing className="container">
         <div className="header-logo">
-          <Link href="/">
+          {/* commented Link for under construction*/}
+          {/* <Link href="/"> */}
             <Image
               src={logoImage}
               alt="N Image"
               width={150}
               height={91}
             ></Image>
-          </Link>
+          {/* </Link> */}
         </div>
-        <div className="header-links">
+       {/* Added the visibility: hidden for under construction*/}
+        <div className="header-links"> 
           <Links links={props?.links} />
         </div>
       </Segment>
