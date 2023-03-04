@@ -12,7 +12,7 @@ const UnderConstruction = () => {
           <h1 className={styles.title}>We are coming soon</h1>
           <h2>Site Under Construction</h2>
           <h2>Contact</h2>
-          +61 413-403-162 / +61 435-497-703
+          +61 413-403-162
           <span>enquiry@takfabrication.com.au</span>
         </section>
       </main>
