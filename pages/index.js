@@ -21,13 +21,13 @@ export default function MainHome() {
 
       <ParallaxProvider>
         {/* commented below section for under construction changes */}
-          {/* <Home />
+          <Home />
           <About />
           <Approach />
           <ParallaxImage />
           <Gallery />
-          <FormExampleFieldControl /> */}
-        <UnderConstruction/>
+          <FormExampleFieldControl />
+        {/* <UnderConstruction/> */}
       </ParallaxProvider>
 
 
