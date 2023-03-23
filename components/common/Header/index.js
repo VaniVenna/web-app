@@ -17,7 +17,6 @@ const HeaderSection = (props) => {
     useEffect(() => {
       setData(window.location.href);
     }, []);
-    console.log("data", data);
     return props?.links?.map((link, index) => {
       return (
         data && (
@@ -72,23 +71,26 @@ const HeaderSection = (props) => {
       <Segment id="myHeader" clearing className="container">
         <div className="header-logo">
           {/* commented Link for under construction*/}
-          {/* <Link href="/"> */}
+          <Link href="/">
             <Image
               src={logoImage}
               alt="N Image"
               width={150}
               height={91}
             ></Image>
-          {/* </Link> */}
+          </Link>
         </div>
-       {/* Added the visibility: hidden for under construction*/}
-        <div className="header-links"> 
+        {/* Added the visibility: hidden for under construction*/}
+        <div className="header-links">
           <Links links={props?.links} />
         </div>
       </Segment>
-      <div className="backToTop">
-        <AnchorLink id="topScroll" href="#home"></AnchorLink>
-      </div>
+      {console.log("data in return", data)}
+      {!data.includes("Quote") ? (
+        <div className="backToTop">
+          <AnchorLink id="topScroll" href="#home"></AnchorLink>
+        </div>
+      ) : null}
     </>
   );
 };
