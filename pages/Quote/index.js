@@ -16,7 +16,7 @@ const Quote = () => {
   return (
     <div className={styles.form}>
       <Form className={styles.form_Data}>
-        <Header as="h2" className={styles.header}>
+        <Header as="h1" className={styles.header}>
           Quote Request
         </Header>
         <Form.Group widths="equal" className={styles.form_Data_Group1}>
@@ -109,7 +109,7 @@ const Quote = () => {
             required
             type="text"
           />
-          <DropdownUI defaultValue="au" className="Quote_Dropdown"/>
+          <DropdownUI defaultValue="au" className="Quote_Dropdown" />
         </Form.Group>
 
         <Header as="h4" className={styles.header}>
@@ -144,7 +144,7 @@ const Quote = () => {
           content="Request Quote"
           // onClick={submitHandler}
           type="submit"
-          // label="Submit"
+        // label="Submit"
         />
       </Form>
       {/* <InputFile

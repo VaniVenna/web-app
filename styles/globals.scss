@@ -30,6 +30,13 @@ a {
   }
 }
 
+#layout {
+  width: 100% !important;
+  overflow: hidden;
+  margin: 0 !important;
+  background: #000;
+}
+
 .box {
   h2.ui.header {
     font-size: 20px;
@@ -153,7 +160,32 @@ a {
   }
 }
 
-.ui.fluid.search.selection.dropdown.Quote_Dropdown{
+.ui.fluid.search.selection.dropdown.Quote_Dropdown {
   top: 24px !important;
   height: 40px !important;
+}
+
+#myHeader {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+#contactUs {
+  margin: 0 !important;
+}
+
+/* Hamburger Menu Style */
+#myHeaderMobile {
+  display: none;
+  background: #000;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

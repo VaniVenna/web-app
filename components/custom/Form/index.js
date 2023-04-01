@@ -15,7 +15,6 @@ import locationImage from "../../../assets/image/location/location.png";
 import weldImage from "../../../public/homepage1.jpg";
 import styles from "./Form.module.scss";
 import axios from "axios";
-import { Parallax, Background } from "react-parallax";
 
 const FormExampleFieldControl = () => {
   const [formData, setFormData] = useState({
@@ -26,23 +25,9 @@ const FormExampleFieldControl = () => {
     Message: "",
   });
 
-  const handleChange = (e, data) => {
-    if (data === "Fname") {
-      setFormData({ ...formData, Fname: e.target.value });
-    }
-    if (data === "Lname") {
-      setFormData({ ...formData, Lname: e.target.value });
-    }
-    if (data === "Email") {
-      setFormData({ ...formData, Email: e.target.value });
-    }
-    if (data === "Phone") {
-      setFormData({ ...formData, Phone: e.target.value });
-    }
-    if (data === "Message") {
-      setFormData({ ...formData, Message: e.target.value });
-    }
-  };
+  const handleChange = (value, field) => {
+    setFormData({ ...formData, [field]: value })
+  }
   const submitHandler = async () => {
     try {
       if (
@@ -78,11 +63,13 @@ const FormExampleFieldControl = () => {
       console.log(err);
     }
   };
+
+  console.log("form data", formData);
   const url =
     "https://www.google.com/maps/place/Tak+Fabrications+and+Precision+Engg/@-38.0368691,145.2040785,20z/data=!4m5!3m4!1s0x6ad613654a2dff81:0x986e3aba0b0f8f20!8m2!3d-38.0367851!4d145.2043024!5m1!1e2";
   return (
     <Container className={styles.contactUs} id="contactUs">
-      <div className={styles.location}>
+      <div className={styles.galleryImage}>
         <Image
           className={styles.contactImage}
           src={weldImage}
@@ -101,7 +88,7 @@ const FormExampleFieldControl = () => {
               control={Input}
               label="First name"
               placeholder="First name"
-              onChange={(e) => handleChange(e, "Fname")}
+              onChange={(e) => handleChange(e.target.value, "Fname")}
               value={formData?.Fname}
               className={styles.form_Data_Group_Field}
               required
@@ -110,7 +97,7 @@ const FormExampleFieldControl = () => {
               control={Input}
               label="Last name"
               placeholder="Last name"
-              onChange={(e) => handleChange(e, "Lname")}
+              onChange={(e) => handleChange(e.target.value, "Lname")}
               value={formData?.Lname}
               className={styles.form_Data_Group_Field}
               required
@@ -121,7 +108,7 @@ const FormExampleFieldControl = () => {
               control={Input}
               label="Email"
               placeholder="Email"
-              onChange={(e) => handleChange(e, "Email")}
+              onChange={(e) => handleChange(e.target.value, "Email")}
               value={formData?.Email}
               className={styles.form_Data_Group_Field}
               required
@@ -132,7 +119,7 @@ const FormExampleFieldControl = () => {
               control={Input}
               label="Phone"
               placeholder="Phone"
-              onChange={(e) => handleChange(e, "Phone")}
+              onChange={(e) => handleChange(e.target.value, "Phone")}
               value={formData?.Phone}
               className={styles.form_Data_Group_Field}
               pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
@@ -143,7 +130,7 @@ const FormExampleFieldControl = () => {
             control={TextArea}
             label="Message"
             placeholder="Tell us more..."
-            onChange={(e) => handleChange(e, "Message")}
+            onChange={(e) => handleChange(e.target.value, "Message")}
             value={formData?.Message}
             className={styles.form_Data_Group_Field}
           />
@@ -154,7 +141,7 @@ const FormExampleFieldControl = () => {
             content="Send Message"
             onClick={submitHandler}
             type="submit"
-            // label="Submit"
+          // label="Submit"
           />
         </Form>
       </div>
@@ -172,8 +159,6 @@ const FormExampleFieldControl = () => {
           ></Image>
         </a>
       </div>
-
-      {/* <MainForm /> */}
     </Container>
   );
 };

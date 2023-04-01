@@ -1,17 +1,82 @@
-// .headerBox{
-//     margin-left: 15%;
-//     margin-right: 15%;
-//     background: transparent;
-//     box-shadow: none;
-//     border: none;
-//     position: relative;
-//     // margin: 1rem 0;
-//     padding: 1em 1em;
-// }
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: white;
 
+}
+
+.mobileHeader {
+  position: relative;
+  background: #000;
+
+  .hamburgerIcon {
+    width: 30px;
+    position: relative;
+    left: 4vw;
+    z-index: 1;
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+      left: 2vw;
+    }
+
+    span {
+      height: 5px;
+      width: 100%;
+      background: #fff;
+      display: block;
+      margin-bottom: 6px;
+      position: relative;
+      transition: .4s;
+    }
+
+    &.open {
+      span {
+        display: none;
+
+        &:first-child {
+          transform: rotate(45deg);
+          top: 11px;
+          display: block;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+          display: block;
+        }
+      }
+    }
+  }
+
+  .headerLogo {
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .headerLinks {
+    position: absolute;
+    width: 100%;
+    background: #000;
+    top: 29vw;
+    padding-bottom: 3vw;
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+      top: 13vw;
+    }
+
+    .hambergerList {
+      width: 100%;
+      margin: 3vw;
+
+      .hambergerListItem {
+        margin: 1.5vw;
+
+        a {
+          color: #feb40b;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

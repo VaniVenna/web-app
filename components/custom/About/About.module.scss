@@ -6,12 +6,21 @@
   width: 100% !important;
   color: white;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 4vw;
+  }
+
   .heroImage {
     box-shadow: 0 3px 10px rgb(246 158 26 / 20%);
   }
 
   .description {
     padding: 0 2vw;
+
+    @media (max-width: 1024px) {
+      padding: 4vw 0;
+    }
 
     .header6 {
       font-size: 30px;

@@ -3,20 +3,17 @@ import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import React from "react";
 import { useEffect, useState } from "react";
-import { Header, Segment } from "semantic-ui-react";
+import { Header, Segment, List } from "semantic-ui-react";
 import logoImage from "../../../public/header1-removebg-preview.png";
+import { HashLink } from "react-router-hash-link";
 import styles from "./header.module.scss";
-import { useRouter } from "next/router";
-import { HashLink, NavHashLink } from "react-router-hash-link";
-import { Redirect } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const HeaderSection = (props) => {
   const [data, setData] = useState("");
-  const Links = (props) => {
-    useEffect(() => {
-      setData(window.location.href);
-    }, []);
+  const [hamburgerState, setHamburgerState] = useState(false)
+
+  const HeaderLinks = (props) => {
     return props?.links?.map((link, index) => {
       return (
         data && (
@@ -35,15 +32,46 @@ const HeaderSection = (props) => {
               ))}
             {!data.includes("Quote")
               ? link?.id === "get_a_quote" && (
-                  <Link href={link?.href}>{link?.item}</Link>
-                )
+                <Link href={link?.href}>{link?.item}</Link>
+              )
               : null}
           </Header>
         )
       );
     });
-  };
+  }
+
+  const HamburgerLinks = props => {
+    return props?.links?.map((link, index) => {
+      return (
+        data && (
+          // <Header as="h4" floated="right" key={index} className="button">
+          <List.Item key={index} className={styles.hambergerListItem}>
+            {link?.id !== "get_a_quote" &&
+              (!data.includes("Quote") ? (
+                <Router>
+                  <HashLink smooth to={link?.href}>
+                    {link?.item}
+                  </HashLink>
+                </Router>
+              ) : (
+                <Link href={`${window.location.origin}${link?.mHref}`}>
+                  {link?.item}
+                </Link>
+              ))}
+            {!data.includes("Quote")
+              ? link?.id === "get_a_quote" && (
+                <Link href={link?.href}>{link?.item}</Link>
+              )
+              : null}
+          </List.Item>
+        )
+      );
+    });
+  }
+
   useEffect(() => {
+    setData(window.location.href);
     const header = document.getElementById("myHeader");
     const topScroll = document.getElementById("topScroll");
     const sticky = header?.offsetTop;
@@ -64,7 +92,7 @@ const HeaderSection = (props) => {
     return () => {
       window.removeEventListener("scroll", scrollCallBack);
     };
-  }, []);
+  }, [])
 
   return (
     <>
@@ -82,10 +110,33 @@ const HeaderSection = (props) => {
         </div>
         {/* Added the visibility: hidden for under construction*/}
         <div className="header-links">
-          <Links links={props?.links} />
+          <HeaderLinks links={props?.links} />
         </div>
       </Segment>
-      {console.log("data in return", data)}
+      <Segment id="myHeaderMobile" clearing className={`container ${styles.mobileHeader}`}>
+        <div
+          className={`${styles.hamburgerIcon} ${hamburgerState ? styles.open : styles.close}`}
+          onClick={() => setHamburgerState(!hamburgerState)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className={styles.headerLogo}>
+          <Link href="/">
+            <Image
+              src={logoImage}
+              alt="N Image"
+              width={150}
+              height={91}
+            ></Image>
+          </Link>
+        </div>
+        {hamburgerState && <div className={styles.headerLinks}>
+          <List className={styles.hambergerList}>
+            <HamburgerLinks links={props?.links} />
+          </List>
+        </div>}
+      </Segment>
       {!data.includes("Quote") ? (
         <div className="backToTop">
           <AnchorLink id="topScroll" href="#home"></AnchorLink>

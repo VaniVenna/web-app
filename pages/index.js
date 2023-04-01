@@ -21,17 +21,14 @@ export default function MainHome() {
 
       <ParallaxProvider>
         {/* commented below section for under construction changes */}
-          <Home />
-          <About />
-          <Approach />
-          <ParallaxImage />
-          <Gallery />
-          <FormExampleFieldControl />
+        <Home />
+        <About />
+        <Approach />
+        <ParallaxImage />
+        <Gallery />
+        <FormExampleFieldControl />
         {/* <UnderConstruction/> */}
       </ParallaxProvider>
-
-
-      
     </div>
   );
 }

@@ -289,20 +289,19 @@ const Gallery = () => {
           data-lg-size={item.size}
           className={styles.item}
           data-src={`/Gallery/galleryImage${index + 1}.png`}
-          // data-src="/assembly_1.png"
+        // data-src="/assembly_1.png"
         >
           <Image
             // style={{ maxWidth: "280px" }}
             style={{ justifyContent: "space-between" }}
             className={styles.grid}
-            src={require(`../../../public/Gallery/galleryImage${
-              index + 1
-            }.png`)}
+            src={require(`../../../public/Gallery/galleryImage${index + 1
+              }.png`)}
             // src="/assembly_1.png"
             alt=""
             width={300}
             height={200}
-            // justifyContent="space-between"
+          // justifyContent="space-between"
           ></Image>
         </a>
       );
@@ -312,7 +311,8 @@ const Gallery = () => {
   useEffect(() => {
     lightGallery.current.refresh();
     console.log("videl", lgVideo);
-  }, [items]);
+  }, [items])
+
   return (
     <div id="gallery" className={styles.gallery}>
       <div>
